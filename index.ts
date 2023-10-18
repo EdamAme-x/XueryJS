@@ -1,4 +1,4 @@
-const Tags = [
+const Tags: string[] = [
     "a", "abbr", "address", "area", "article", "aside", "audio", "b", "base", "bdi", "bdo", "blockquote",
     "body", "br", "button", "canvas", "caption", "cite", "code", "col", "colgroup", "data", "datalist", "dd",
     "del", "details", "dfn", "dialog", "div", "dl", "dt", "em", "embed", "fieldset", "figcaption", "figure",
@@ -15,8 +15,8 @@ const Tags = [
 ];
 
 for (let e = 0; e < Tags.length; e++) {
-    globalThis[Tags[e]] = (attrs, ...children) => {
-        const el = document.createElement(Tags[e]);
+    globalThis[Tags[e]] = (attrs: object, ...children: any[]): Node => {
+        const el: Node = document.createElement(Tags[e]);
         if (attrs) {
             for (const key in attrs) {
                 if (key[0] === '$') {
@@ -37,8 +37,13 @@ for (let e = 0; e < Tags.length; e++) {
     };
 }
 
-globalThis.$ = (selector) => {
-    let el = document.querySelectorAll(selector);
+type Result = {
+    in: Function,
+    el: Node[] | Node
+}
+
+globalThis.$ = (selector: string): Result => {
+    let el: Node[] | [] = document.querySelectorAll(selector);
     if (el.length === 0) {
         return {
             in: () => {
