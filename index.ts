@@ -51,17 +51,6 @@ globalThis.$ = (selector: string): Result => {
             }
         };
     }
-    if (el.length === 1) {
-        return {
-            in: (els) => {
-                while (el[0].firstChild) {
-                    el[0].removeChild(el[0].firstChild);
-                }
-                el[0].appendChild(els);
-            },
-            el: el[0]
-        };
-    }
     let resultObj = [];
     for (let x = 0; x < el.length; x++) {
         resultObj.push({
