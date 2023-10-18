@@ -14,71 +14,60 @@ const Tags = [
     "video", "audio", "button", "details", "dialog", "summary", "template", "figcaption", "mark", "wbr"
 ];
 
-for (let e = 0;e < Tags.length;e++) {
-  globalThis[Tags[e]] = 
-     (attrs, ...children) => {
+for (let e = 0; e < Tags.length; e++) {
+    globalThis[Tags[e]] = (attrs, ...children) => {
         const el = document.createElement(Tags[e]);
-
         if (attrs) {
             for (const key in attrs) {
                 if (key[0] === '$') {
                     el.addEventListener(key.slice(1), attrs[key]);
                     continue;
                 }
-
                 el.setAttribute(key, attrs[key]);
             }
         }
-
         for (let j = 0; j < children.length; j++) {
             if (typeof children[j] === 'string' || typeof children[j] === 'number' || typeof children[j] === 'boolean' || typeof children[j] === 'undefined' || children[j] === null) {
-                el.appendChild(document.createTextNode(children[j]));
-            } else {
-                el.appendChild(children[j]);
+                    el.appendChild(document.createTextNode(children[j]));
+                } else {
+                    el.appendChild(children[j]);
+                }
             }
-        }
         return el;
     };
-};
+}
 
 globalThis.$ = (selector) => {
-    const el: Node = document.querySelectorAll(selector);
-
+    let el = document.querySelectorAll(selector);
     if (el.length === 0) {
         return {
             in: () => {
-                throw Error("Element not found")
+                throw Error("Element not found");
             }
-        }
+        };
     }
-
     if (el.length === 1) {
         return {
             in: (els) => {
-                while (el.firstChild) {
-                    el.removeChild(el.firstChild)
+                while (el[0].firstChild) {
+                    el[0].removeChild(el[0].firstChild);
                 }
-
-                el.appendChild(els)
-            }
-        }
+                el[0].appendChild(els);
+            },
+            el: el[0]
+        };
     }
-
     let resultObj = [];
-
-    for (let x = 0; x < el.length;x++) {
-        resultObj.push(
-            {
-                in: (els) => {
-                    while (el[x].firstChild) {
-                        el[x].removeChild(el[x].firstChild)
-                    }
-    
-                    el[x].appendChild(els)
+    for (let x = 0; x < el.length; x++) {
+        resultObj.push({
+            in: (els) => {
+                while (el[x].firstChild) {
+                    el[x].removeChild(el[x].firstChild);
                 }
-            }
-        )
+                el[x].appendChild(els);
+            },
+            el: el[x]
+        });
     }
-
     return resultObj;
-}
+};
