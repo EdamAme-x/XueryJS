@@ -42,11 +42,27 @@ for (let e = 0;e < Tags.length;e++) {
 };
 
 globalThis.$ = (selector) => {
-    const el = document.querySelectorAll(selector);
+    const el: Node = document.querySelectorAll(selector);
+
+    if (el.length === 0) {
+        return {
+            in: () => {
+                throw Error("Element not found")
+            }
+        }
+    }
 
     if (el.length === 1) {
         return {
-            
+            in: (els) => {
+                while (el.firstChild) {
+                    el.removeChild(el.firstChild)
+                }
+
+                el.appendChild(els)
+            }
         }
     }
+
+    a
 }
