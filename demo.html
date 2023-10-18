@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo</title>
 </head>
+
 <body>
     <div id="app"></div>
     <script src="./Xuery.min.js"></script>
@@ -13,23 +15,25 @@
 
         const Button = (props) => {
             return button({
-                $click: props.addFunc
+                $click: props.addFunc,
+                style: "margin-left: 5px;"
             }, "+")
         }
 
-        $("#app")[0].in(
-            div({}, 
-               span({
-                id: "count"
-               }, "count" + count),
-               Button({
-                addFunc: () => {
-                    count++;
-                    $("#count").el.innerHTML = "count " + count;
-                }
-               })
+        $("#app").in(
+            div({},
+                span({
+                    id: "count"
+                }, "count " + count),
+                Button({
+                    addFunc: () => {
+                        count++;
+                        $("#count").el.innerHTML = "count " + count;
+                    }
+                })
             )
         );
     </script>
 </body>
+
 </html>
