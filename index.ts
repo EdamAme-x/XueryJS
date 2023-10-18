@@ -64,5 +64,21 @@ globalThis.$ = (selector) => {
         }
     }
 
-    a
+    let resultObj = [];
+
+    for (let x = 0; x < el.length;x++) {
+        resultObj.push(
+            {
+                in: (els) => {
+                    while (el[x].firstChild) {
+                        el[x].removeChild(el[x].firstChild)
+                    }
+    
+                    el[x].appendChild(els)
+                }
+            }
+        )
+    }
+
+    return resultObj;
 }
