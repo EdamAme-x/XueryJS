@@ -37,7 +37,7 @@ const buttonEl = (props) => {
   }, "Click here")
 }
 
-$("body > #app").in(
+$("body > #app")[0].in(
   div({}, "Hi ",
     span({}, "mom"),
     buttonEl({
