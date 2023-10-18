@@ -37,7 +37,7 @@ const buttonEl = (props) => {
   }, "Click here")
 }
 
-$("body > #app")[0].in(
+$("body > #app").in(
   div({}, "Hi ",
     span({}, "mom"),
     buttonEl({
@@ -46,3 +46,26 @@ $("body > #app")[0].in(
   )
 )
 ```
+
+### Others Tips
+
+```js
+const buttonEl = (props) => {
+  return button({
+    $click: () => {
+      alert("hi " + props.name)
+    }
+  }, "Click here")
+}
+
+$("body > *")[0].in(
+  div({}, "Hi ",
+    span({}, "mom"),
+    buttonEl({
+      name: "dad"
+    })
+  )
+) // Some Element
+```
+
+
