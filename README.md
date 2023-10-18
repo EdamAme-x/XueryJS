@@ -4,6 +4,20 @@ Any application can be built.
 
 **Only 2 steps to operate**
 
+#### Only *2KB*
+#### Gzip: *900B*
+
+# Comparison
+
+|Name|Size|
+|---|---|
+|React|130 KB|
+|jQuery|87 KB|
+|Vue.js|65 KB|
+|PReact|13 KB|
+|XueryJS|1KB|
+
+
 ## In
 
 ```js
