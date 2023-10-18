@@ -17,6 +17,9 @@ Any application can be built.
 |PReact|13 KB|
 |XueryJS|1KB|
 
+```html
+<script src="https://cdn.ame-x.net/Xuery.min.js"></script>
+```
 
 ## In
 
