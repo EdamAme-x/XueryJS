@@ -206,5 +206,8 @@ globalThis.$ = (selector) => {
     };
     resultObj.in = resultObj[0].in;
     resultObj.el = resultObj[0].el;
+    resultObj.length = el.length;
   }
+
+  return resultObj;
 };
