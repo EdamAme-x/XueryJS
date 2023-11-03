@@ -161,7 +161,13 @@ for (let e = 0; e < Tags.length; e++) {
     const el = document.createElement(Tags[e]);
     if (attrs) {
       for (const key in attrs) {
-        if (key[0] === "$") {
+        if (key === "style" && typeof attrs[key] == "object") {
+          for (const prop in attrs[key]) {
+            el.style[prop] = attrs[key][prop]
+          }
+        }
+        
+        if (key.slice("")[0] === "$") {
           el.addEventListener(key.slice(1), attrs[key]);
           continue;
         }
