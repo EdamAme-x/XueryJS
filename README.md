@@ -54,6 +54,9 @@ const buttonEl = (props) => {
   return button({
     $click: () => {
       alert("hi " + props.name)
+    },
+    style: {
+      borderRadius: "5px"
     }
   }, "Click here")
 }
