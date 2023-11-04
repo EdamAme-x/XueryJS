@@ -16,7 +16,9 @@
         const Button = (props) => {
             return button({
                 $click: props.addFunc,
-                style: "margin-left: 5px;"
+                style: {
+                    marginLeft: "5px"
+                }
             }, "+")
         }
 
@@ -28,7 +30,7 @@
                 Button({
                     addFunc: () => {
                         count++;
-                        $("#count").el.innerHTML = "count " + count;
+                        $("#count").out.innerHTML = "count " + count;
                     }
                 })
             )
