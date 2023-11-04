@@ -183,8 +183,8 @@ for (let e = 0; e < Tags.length; e++) {
             el += ` style="${prop}:${attrs[key][prop]};"`;
           }
         } else if (key.slice(0, 1) === "$") {
-          // Assuming `attrs[key]` contains a function reference
-          el += ` on${key.slice(1)}="${attrs[key]}"`;
+          // @ts-expect-error
+          el += ` on${key.slice(1)}="eval(atob(${btoa(attrs[key])}))"`;
         } else {
           el += ` ${key}="${attrs[key]}"`;
         }

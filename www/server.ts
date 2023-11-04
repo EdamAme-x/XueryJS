@@ -1,10 +1,14 @@
-import { Context, Hono } from "https://deno.land/x/hono/mod.ts";
+import { Context, Hono } from "https://deno.land/x/hono@v3.9.2/mod.ts";
 import $ from "https://xueryjs.deno.dev/runtime/server.ts";
 
 const app = new Hono();
 
-app.get("/", async (c: Context) => {
-    return c.html($.html({}, "hello"));
+app.get("/", (c: Context) => {
+    return c.html($.html({
+        $click: () => {
+            console.log("hello");
+        }
+    }, "hello"));
 })
 
 app.get("/runtime/client.js", async (c: Context) => {
