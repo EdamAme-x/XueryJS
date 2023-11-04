@@ -4,10 +4,10 @@ import $ from "https://xueryjs.deno.dev/runtime/server.ts";
 const app = new Hono();
 
 app.get("/", async (c: Context) => {
-    return c.html("hi");
+    return c.html($.html({}, "hello"));
 })
 
-app.get("/runtime/client", async (c: Context) => {
+app.get("/runtime/client.js", async (c: Context) => {
 
     const text = await Deno.readTextFile("./Xuery.min.js")
 
