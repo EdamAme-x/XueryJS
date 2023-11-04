@@ -1,5 +1,5 @@
 # XueryJS
-Next-generation ultra-compact &amp; ultra-fast 
+Next-generation ultra-compact &amp; ultra-fast library for WEB & SSR.
 Any application can be built.
 
 **Only 2 steps to operate**
