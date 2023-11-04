@@ -29,6 +29,13 @@ $("body > #app").in(div({}, "Hi ", span({}, "mom!")))
 
 ## Out
 ```js
+$("body > #app").in(div({}, "Hello"))
+const text = $("body > #app").out.innerText; // proxy to element object
+console.log(text); // Hello
+```
+
+## Component
+```js
 const buttonEl = (props) => {
   return button({
     $click: () => {
@@ -47,7 +54,7 @@ $("body > #app").in(
 )
 ```
 
-### Others Tips
+## Attrs Tips
 
 ```js
 const buttonEl = (props) => {
