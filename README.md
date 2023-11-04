@@ -15,7 +15,7 @@ Any application can be built.
 |jQuery|87 KB|
 |Vue.js|65 KB|
 |PReact|13 KB|
-|XueryJS|1KB|
+|XueryJS|2 KB|
 
 ```html
 <script src="https://cdn.ame-x.net/Xuery.min.js"></script>
