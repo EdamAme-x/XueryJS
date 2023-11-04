@@ -208,10 +208,10 @@ globalThis.$ = (selector) => {
         }
         el[x].appendChild(els);
       },
-      el: el[x],
+      out: el[x],
     };
     resultObj.in = resultObj[0].in;
-    resultObj.el = resultObj[0].el;
+    resultObj.out = resultObj[0].out;
     resultObj.length = el.length;
   }
 
