@@ -36,6 +36,7 @@
     "https://deno.land/x/hono@v3.9.2/utils/stream.ts": "1789dcc73c5b0ede28f83d7d34e47ae432c20e680907cb3275a9c9187f293983",
     "https://deno.land/x/hono@v3.9.2/utils/url.ts": "5fc3307ef3cb2e6f34ec2a03e3d7f2126c6a9f5f0eab677222df3f0e40bd7567",
     "https://deno.land/x/hono@v3.9.2/validator/index.ts": "6c986e8b91dcf857ecc8164a506ae8eea8665792a4ff7215471df669c632ae7c",
-    "https://deno.land/x/hono@v3.9.2/validator/validator.ts": "afa5e52495e0996fbba61996736fab5c486590d72d376f809e9f9ff4e0c463e9"
+    "https://deno.land/x/hono@v3.9.2/validator/validator.ts": "afa5e52495e0996fbba61996736fab5c486590d72d376f809e9f9ff4e0c463e9",
+    "https://xueryjs.deno.dev/runtime/server.ts": "5ce45224f57d0466b1b735921a372f905fa9d3b37a8563e88ba1e43733452e07"
   }
 }

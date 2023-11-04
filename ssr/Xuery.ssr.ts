@@ -1,7 +1,9 @@
 /**
  * @Copyright @amex2189 | @EdamAme-x / Free
  */
-let $ = {};
+const $: {
+  [key: string]: Function;
+} = {};
 
 const Tags = [
   "a",
@@ -161,12 +163,23 @@ const Tags = [
   "wbr",
 ];
 for (let e = 0; e < Tags.length; e++) {
-  $[Tags[e]] = (attrs, ...children) => {
+  $[Tags[e]] = (
+    attrs: {
+      [key: string]:
+        | string
+        | {
+            [key: string]: string;
+          };
+    },
+    ...children: string[]
+  ): string => {
     let el = `<${Tags[e]}`;
     if (attrs) {
       for (const key in attrs) {
         if (key === "style" && typeof attrs[key] == "object") {
+          // @ts-expect-error
           for (const prop in attrs[key]) {
+            // @ts-expect-error
             el += ` style="${prop}:${attrs[key][prop]};"`;
           }
         } else if (key.slice(0, 1) === "$") {

@@ -1,5 +1,5 @@
 import { Context, Hono } from "https://deno.land/x/hono/mod.ts";
-// import $ from "https://xueryjs.deno.dev/runtime/server.ts";
+import $ from "https://xueryjs.deno.dev/runtime/server.ts";
 
 const app = new Hono();
 
