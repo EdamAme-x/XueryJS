@@ -197,3 +197,5 @@ for (let e = 0; e < Tags.length; e++) {
     return el;
   };
 }
+
+export default $;
