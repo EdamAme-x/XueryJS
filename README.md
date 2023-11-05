@@ -20,7 +20,7 @@ Any application can be built.
 |XueryJS|2 KB|
 
 ```html
-<script src="https://cdn.ame-x.net/Xuery.min.js"></script>
+<script src="https://xueryjs.deno.dev/runtime/client.js"></script>
 ```
 
 ## In
