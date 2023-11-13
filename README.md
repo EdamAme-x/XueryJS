@@ -2,6 +2,8 @@
 Next-generation ultra-compact &amp; ultra-fast library for WEB & SSR.
 Any application can be built.
 
+[Playground](https://codepen.io/EdamAme-x/pen/NWogMrr)
+
 ![icon](./assets/Xuery.png)
 
 **Only 2 steps to operate**
