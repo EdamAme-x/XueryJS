@@ -208,9 +208,15 @@ globalThis.$ = (selector) => {
                 while (el[x].firstChild) {
                     el[x].removeChild(el[x].firstChild);
                 }
+
+                if (!els) {
+                    el[x].innerHTML = "";
+                    return;
+                }
+                
                 el[x].appendChild(els);
             },
-            out: el[x],
+            out: el[x]
         };
         resultObj.in = resultObj[0].in;
         resultObj.out = resultObj[0].out;
