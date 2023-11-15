@@ -58,7 +58,7 @@ $("body > #app").in(
 )
 ```
 
-## Attrs Tips
+## Tips
 
 ```js
 const buttonEl = (props) => {
@@ -82,4 +82,10 @@ $("body > *")[0].in(
 ) // Some Element
 ```
 
+```js
+$("body").in() // clear | to empty
+$("body").in(div({
+  raw: "<p>Hello Hono!</p>"
+})) // raw
+```
 
