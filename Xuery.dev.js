@@ -161,6 +161,10 @@ for (let e = 0; e < Tags.length; e++) {
         const el = document.createElement(Tags[e]);
         if (attrs) {
             for (const key in attrs) {
+                if (key === "raw") {
+                    el.innerHTML = attrs[key];
+                    continue;
+                }
                 if (key === "style" && typeof attrs[key] == "object") {
                     for (const prop in attrs[key]) {
                         el.style[prop] = attrs[key][prop];
@@ -171,9 +175,6 @@ for (let e = 0; e < Tags.length; e++) {
                     continue;
                 }
                 el.setAttribute(key, attrs[key]);
-                if (key === "raw") {
-                    el.innerHTML = attrs[key];
-                }
             }   
         }
         for (let j = 0; j < children.length; j++) {
