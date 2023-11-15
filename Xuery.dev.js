@@ -171,7 +171,10 @@ for (let e = 0; e < Tags.length; e++) {
                     continue;
                 }
                 el.setAttribute(key, attrs[key]);
-            }
+                if (key === "raw") {
+                    el.innerHTML = attrs[key];
+                }
+            }   
         }
         for (let j = 0; j < children.length; j++) {
             if (typeof children[j] === "string" ||
